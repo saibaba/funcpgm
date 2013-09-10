@@ -197,11 +197,30 @@ def applicative_client():
     print "ifA ..." , ap (ap (ap( ap(Maybe(condf), Maybe(True)), Maybe(1) ), Maybe(2)))
     print "ifA ..." , ap (ap (ap( ap(Maybe(condf), Maybe(True)), Maybe(1) ), Maybe()))
 
-    # TODO now with miffy
     ifM = lambda c, x, y: Maybe(c).bind(lambda z: x if z else y)
 
     print "ifM ...", ifM(True, Maybe(1), Maybe(2))
     print "ifM ...", ifM(True, Maybe(1), Maybe())
 
+    #effects  = computations (logic in applicative functor code for <*>
+    #results = return value from a computation (<*> returned value)
+    #So, Applicative requires control flow of  effects be static (i.e., it always executes the effects(computations) of all their arguments
+    #But, results can be manipulated dynamically based on logic in applicative function ('ap' or '*') code.
+    #Where as, Monads allow the flow of effects(computations) depend on the results
+
+    # See http://stackoverflow.com/a/17412402 (Antal S-Z answer in 
+    #        http://stackoverflow.com/questions/17409260/what-advantage-does-monad-give-us-over-an-applicative)
+
+    """
+    Every applicative (f <$> app1 <*> app2 <*> ... <*> appN) is equivalent to:
+
+    do val1 <- app1
+       val2 <- app2
+       ...
+       valN <- appN
+       pure $ f val1 val2 ... valN
+
+    i.e., all effects, app1, ... appN are computed before the results val1, ..., valN are used by f
+    """
     
 applicative_client()
