@@ -9,3 +9,4 @@ References
 * http://blog.tmorris.net/posts/automated-validation-with-applicatives-and-semigroups-part-2-java/
 * http://dl.dropboxusercontent.com/u/7810909/docs/applicative-errors-scala/chunk-html/ar01s06s03.html
 * https://mail.haskell.org/pipermail/haskell-cafe/2009-May/060951.html  (on iffy/miffy)
+* http://apfelmus.nfshost.com/articles/monoid-fingertree.html (finger tree tags are monoid - help unify various data structures like linked-list, priority queue)
