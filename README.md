@@ -10,3 +10,12 @@ References
 * http://dl.dropboxusercontent.com/u/7810909/docs/applicative-errors-scala/chunk-html/ar01s06s03.html
 * https://mail.haskell.org/pipermail/haskell-cafe/2009-May/060951.html  (on iffy/miffy)
 * http://apfelmus.nfshost.com/articles/monoid-fingertree.html (finger tree tags are monoid - help unify various data structures like linked-list, priority queue)
+
+
+Monads
+------
+
+Some uses:
+
+* Used for structuring (how it looks visually in the source code file, affecting readability) the functional program 
+* Short circuit and also completely prevent later parts of a composition sequence based on what happens in previous step - something that you cannot do with applicative functor
